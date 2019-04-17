@@ -1,0 +1,11 @@
+p{
+	font-size: 40px;
+	.class{
+		background-color: $pbg;
+	}
+	&:hover{
+		background-color: @exec invert($pbg);
+		color: @exec invert($ptc);
+		margin: @exec random(1, 100, px);
+	}
+}

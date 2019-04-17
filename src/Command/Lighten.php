@@ -1,0 +1,43 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: siim
+ * Date: 14/02/2018
+ * Time: 17:15
+ */
+
+namespace Greativ\GCSS\Command;
+
+class Lighten extends BaseCommand {
+
+	protected $paramMap = [
+		'color',
+		'amount'
+	];
+
+	public function exec() {
+		if ($this->params['color'] == 'transparent') {
+			return 'transparent';
+		} else {
+			return $this->adjustBrightness($this->params['color'], $this->params['amount']);
+		}
+	}
+
+	private function adjustBrightness($hex, $steps) {
+		$steps = max(-255, min(255, $steps));
+		$hex = str_replace('#', '', $hex);
+		if (strlen($hex) == 3) {
+			$hex = str_repeat(substr($hex, 0, 1), 2) . str_repeat(substr($hex, 1, 1), 2) . str_repeat(substr($hex, 2, 1), 2);
+		}
+		$color_parts = str_split($hex, 2);
+		$return = '#';
+		foreach ($color_parts as $color) {
+			$color = hexdec($color);
+			$color = max(0, min(255, $color + $steps));
+			$return .= str_pad(dechex($color), 2, '0', STR_PAD_LEFT);
+		}
+
+		return $return;
+	}
+
+}
