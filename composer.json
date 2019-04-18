@@ -1,20 +1,25 @@
 {
     "name": "greativ/gcss",
-    "description": "Boilerplate package for creating other packages.",
-    "keywords": ["template", "composer", "package"],
+    "description": "Fast CSS preprocessor",
+    "keywords": ["css", "scss", "preprocessor", "php"],
     "license": "MIT",
     "authors": [
-        {
-            "name": "Siim Somma",
-            "email": "siim@greaton.ee"
-        }
+      {
+        "name": "Siim Somma",
+        "email": "siim@greaton.ee",
+        "role": "Developer"
+      },
+      {
+        "name": "Margo Pärnaku",
+        "email": "margo@greaton.ee",
+        "role": "Developer"
+      }
     ],
     "type": "project",
     "require": {
-		"php": ">=7.1"
+      "php": ">=5.4"
     },
     "require-dev": {
-		"phpunit/phpunit": "6.*"
     },
     "autoload": {
         "psr-4": {
