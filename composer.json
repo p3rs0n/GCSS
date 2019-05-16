@@ -15,7 +15,7 @@
         "role": "Developer"
       }
     ],
-    "type": "project",
+    "type": "library",
     "require": {
       "php": ">=5.4"
     },
